@@ -1,4 +1,4 @@
-
+//ê³ ê¸‰c++ 1ì£¼ì°¨ ê³¼ì œ _ 20211359 ì‹ ì˜ˆì€
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,18 +12,18 @@ int main(void)
 	ifstream input;
 	input.open("MBTIdata.txt");
 
-	// Ã£À» MBTI ÀÔ·Â
-	cout << "MBTIÀÔ·Â: " << endl;
+	// ì°¾ì„ MBTI ì…ë ¥
+	cout << "MBTIì…ë ¥: " << endl;
 	cin >> search;
 
-	//mbti µ¥ÀÌÅÍ ÆÄÀÏ ¿­±â
+	//mbti ë°ì´í„° íŒŒì¼ ì—´ê¸°
 	if (input.is_open())
 	{
 		while (!input.eof())
 		{
 			getline(input, line);
 
-			//ÇÑ ÁÙ¾¿ ÀÔ·ÂµÈ mbti Ã£°í Æ÷ÇÔµÈ Çà Ãâ·Â
+			//í•œ ì¤„ì”© ì…ë ¥ëœ mbti ì°¾ê³  í¬í•¨ëœ í–‰ ì¶œë ¥
 			if ((offset = line.find(search,0)) != string::npos)
 				cout << line << endl;
 		}
