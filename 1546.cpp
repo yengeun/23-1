@@ -27,7 +27,7 @@ int main() {
 		result += (double)arr[i] / (double)max * 100.l;
 	}
 
-	// 과목의 개수 N만큼 나누면 평균 값이 완성된다.
+
 	cout << result / n;
 
 	return 0;
