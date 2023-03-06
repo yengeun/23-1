@@ -1,3 +1,4 @@
+//ìë£Œêµ¬ì¡° 1ì£¼ì°¨ ê³¼ì œ_20211359 ì‹ ì˜ˆì€
 #include <iostream>
 
 using namespace std;
@@ -26,7 +27,7 @@ int main() {
 		result += (double)arr[i] / (double)max * 100.l;
 	}
 
-	// °ú¸ñÀÇ °³¼ö N¸¸Å­ ³ª´©¸é Æò±Õ °ªÀÌ ¿Ï¼ºµÈ´Ù.
+	// ê³¼ëª©ì˜ ê°œìˆ˜ Në§Œí¼ ë‚˜ëˆ„ë©´ í‰ê·  ê°’ì´ ì™„ì„±ëœë‹¤.
 	cout << result / n;
 
 	return 0;
