@@ -1,4 +1,4 @@
-// 20211359 ½Å¿¹Àº C++ °úÁ¦2
+// 20211359 ì‹ ì˜ˆì€ C++ ê³¼ì œ2
 #include <iostream>
 #include <string>
 
@@ -6,12 +6,11 @@ using namespace std;
 
 
 class MBTI
-    {
-    public:
-        string name; //µ¥ÀÌÅÍ ÇÊµå
-        string mbti;
-
-    };
+{
+ public:
+    string name; //ë°ì´í„° í•„ë“œ
+    string mbti;
+};
 
 int main()
 {
@@ -21,56 +20,56 @@ int main()
     cin >> mymbti;
 
 
-    MBTI Stu[43]; // ÇĞ»ıµéÀ» °´Ã¼·Î »ı¼º
+    MBTI Stu[43]; // í•™ìƒë“¤ì„ ê°ì²´ë¡œ ìƒì„±
 
-    Stu[0].name = "½ÅÇıºó"; Stu[0].mbti = "ESFJ";
-    Stu[1].name = "Á¤Çıºó"; Stu[1].mbti = "ISTJ";
-    Stu[2].name = "È²Áö¿ø"; Stu[2].mbti = "INFP";
-    Stu[3].name = "¹®Çö¼ö"; Stu[3].mbti = "INFJ";
-    Stu[4].name = "°í¿øÁ¤"; Stu[4].mbti = "ISFP";
-    Stu[5].name = "±è¼ºÀº"; Stu[5].mbti = "INTP";
-    Stu[6].name = "±è¼ö¿¬"; Stu[6].mbti = "ISTP";
-    Stu[7].name = "±èÀººñ"; Stu[7].mbti = "ENFP";
-    Stu[8].name = "±èÀºÁö"; Stu[8].mbti = "ISFP";
-    Stu[9].name = "±èÁöÀ±"; Stu[9].mbti = "ESFJ";
-    Stu[10].name = "³ëÀ¯Á¤"; Stu[10].mbti = "ISTP";
-    Stu[11].name = "¹®¼öÈ£"; Stu[11].mbti = "ESTP";
-    Stu[12].name = "¹Ú½ÃÇö"; Stu[12].mbti = "ENFJ";
-    Stu[13].name = "¹ÚÁö¼±"; Stu[13].mbti = "ENTJ";
-    Stu[14].name = "¼­¹Ì¶ó"; Stu[14].mbti = "ESFJ";
-    Stu[15].name = "¼­Áö¿ì"; Stu[15].mbti = "INTP";
-    Stu[16].name = "¾È´Ù¿¬"; Stu[16].mbti = "ENFJ";
-    Stu[17].name = "¿ìÁöÀ±"; Stu[17].mbti = "ESFJ";
-    Stu[18].name = "ÀÌ¼ö¾Æ"; Stu[18].mbti = "ISTP";
-    Stu[19].name = "ÀÌÁ¤¿¬"; Stu[19].mbti = "ESTJ";
-    Stu[20].name = "ÀÌÃ¤¿µ"; Stu[20].mbti = "ISFJ";
-    Stu[21].name = "ÀÌÃ¤¿ø"; Stu[21].mbti = "ISTP";
-    Stu[22].name = "ÀÓ´ÙÀÎ"; Stu[22].mbti = "ESFJ";
-    Stu[23].name = "ÀÓÀº¼­"; Stu[23].mbti = "INFP";
-    Stu[24].name = "ÀüÀ¯³ª"; Stu[24].mbti = "ISTP";
-    Stu[25].name = "ÀüÁö¿¬"; Stu[25].mbti = "INFP";
-    Stu[26].name = "Á¤¹Î¼­"; Stu[26].mbti = "ISFP";
-    Stu[27].name = "Á¤ÀºÁÖ"; Stu[27].mbti = "ESTP";
-    Stu[28].name = "Á¤ÇöÁ¤"; Stu[28].mbti = "INFP";
-    Stu[29].name = "ÇÑ¼Û¹Ì"; Stu[29].mbti = "INFP";
-    Stu[30].name = "ÇÑÁöÀº"; Stu[30].mbti = "ISTP";
-    Stu[31].name = "ÇãÃ¤À±"; Stu[31].mbti = "ISTJ";
-    Stu[32].name = "È«ÁöÇö"; Stu[32].mbti = "ENFP";
-    Stu[33].name = "È²½ÃÀº"; Stu[33].mbti = "ISTJ";
-    Stu[34].name = "È²¿¹¿ø"; Stu[34].mbti = "ISFJ";
-    Stu[35].name = "È²ÁöÀº"; Stu[35].mbti = "ISFP";
-    Stu[36].name = "È²Ã¤¿ø"; Stu[36].mbti = "ISTP";
-    Stu[37].name = "±èÀ¯³ª"; Stu[37].mbti = "ESTJ";
-    Stu[38].name = "È²¼ÒÀ±"; Stu[38].mbti = "ISTP";
-    Stu[39].name = "È²Áö¿ø"; Stu[39].mbti = "INTP";
-    Stu[40].name = "½Å¿¹Àº"; Stu[40].mbti = "ESFP";
-    Stu[41].name = "Á¤Çı¹Î"; Stu[41].mbti = "ISTP";
-    Stu[42].name = "°­¼öÇö"; Stu[42].mbti = "ISTP";
+    Stu[0].name = "ì‹ í˜œë¹ˆ"; Stu[0].mbti = "ESFJ";
+    Stu[1].name = "ì •í˜œë¹ˆ"; Stu[1].mbti = "ISTJ";
+    Stu[2].name = "í™©ì§€ì›"; Stu[2].mbti = "INFP";
+    Stu[3].name = "ë¬¸í˜„ìˆ˜"; Stu[3].mbti = "INFJ";
+    Stu[4].name = "ê³ ì›ì •"; Stu[4].mbti = "ISFP";
+    Stu[5].name = "ê¹€ì„±ì€"; Stu[5].mbti = "INTP";
+    Stu[6].name = "ê¹€ìˆ˜ì—°"; Stu[6].mbti = "ISTP";
+    Stu[7].name = "ê¹€ì€ë¹„"; Stu[7].mbti = "ENFP";
+    Stu[8].name = "ê¹€ì€ì§€"; Stu[8].mbti = "ISFP";
+    Stu[9].name = "ê¹€ì§€ìœ¤"; Stu[9].mbti = "ESFJ";
+    Stu[10].name = "ë…¸ìœ ì •"; Stu[10].mbti = "ISTP";
+    Stu[11].name = "ë¬¸ìˆ˜í˜¸"; Stu[11].mbti = "ESTP";
+    Stu[12].name = "ë°•ì‹œí˜„"; Stu[12].mbti = "ENFJ";
+    Stu[13].name = "ë°•ì§€ì„ "; Stu[13].mbti = "ENTJ";
+    Stu[14].name = "ì„œë¯¸ë¼"; Stu[14].mbti = "ESFJ";
+    Stu[15].name = "ì„œì§€ìš°"; Stu[15].mbti = "INTP";
+    Stu[16].name = "ì•ˆë‹¤ì—°"; Stu[16].mbti = "ENFJ";
+    Stu[17].name = "ìš°ì§€ìœ¤"; Stu[17].mbti = "ESFJ";
+    Stu[18].name = "ì´ìˆ˜ì•„"; Stu[18].mbti = "ISTP";
+    Stu[19].name = "ì´ì •ì—°"; Stu[19].mbti = "ESTJ";
+    Stu[20].name = "ì´ì±„ì˜"; Stu[20].mbti = "ISFJ";
+    Stu[21].name = "ì´ì±„ì›"; Stu[21].mbti = "ISTP";
+    Stu[22].name = "ì„ë‹¤ì¸"; Stu[22].mbti = "ESFJ";
+    Stu[23].name = "ì„ì€ì„œ"; Stu[23].mbti = "INFP";
+    Stu[24].name = "ì „ìœ ë‚˜"; Stu[24].mbti = "ISTP";
+    Stu[25].name = "ì „ì§€ì—°"; Stu[25].mbti = "INFP";
+    Stu[26].name = "ì •ë¯¼ì„œ"; Stu[26].mbti = "ISFP";
+    Stu[27].name = "ì •ì€ì£¼"; Stu[27].mbti = "ESTP";
+    Stu[28].name = "ì •í˜„ì •"; Stu[28].mbti = "INFP";
+    Stu[29].name = "í•œì†¡ë¯¸"; Stu[29].mbti = "INFP";
+    Stu[30].name = "í•œì§€ì€"; Stu[30].mbti = "ISTP";
+    Stu[31].name = "í—ˆì±„ìœ¤"; Stu[31].mbti = "ISTJ";
+    Stu[32].name = "í™ì§€í˜„"; Stu[32].mbti = "ENFP";
+    Stu[33].name = "í™©ì‹œì€"; Stu[33].mbti = "ISTJ";
+    Stu[34].name = "í™©ì˜ˆì›"; Stu[34].mbti = "ISFJ";
+    Stu[35].name = "í™©ì§€ì€"; Stu[35].mbti = "ISFP";
+    Stu[36].name = "í™©ì±„ì›"; Stu[36].mbti = "ISTP";
+    Stu[37].name = "ê¹€ìœ ë‚˜"; Stu[37].mbti = "ESTJ";
+    Stu[38].name = "í™©ì†Œìœ¤"; Stu[38].mbti = "ISTP";
+    Stu[39].name = "í™©ì§€ì›"; Stu[39].mbti = "INTP";
+    Stu[40].name = "ì‹ ì˜ˆì€"; Stu[40].mbti = "ESFP";
+    Stu[41].name = "ì •í˜œë¯¼"; Stu[41].mbti = "ISTP";
+    Stu[42].name = "ê°•ìˆ˜í˜„"; Stu[42].mbti = "ISTP";
 
 
     for (int i = 0; i < 43; i++)
     {
-        if (Stu[i].mbti == mymbti) // ÀÔ·ÂÇÑ mbti¿Í °°Àº ÇĞ»ı Ã£¾Æ¼­ Ãâ·Â
+        if (Stu[i].mbti == mymbti) // ì…ë ¥í•œ mbtiì™€ ê°™ì€ í•™ìƒ ì°¾ì•„ì„œ ì¶œë ¥
             cout << Stu[i].name << endl;
     }
  
