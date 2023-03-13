@@ -9,26 +9,26 @@ int main()
 {
 	class Polynomial
 	{
-		int degree;  // ´ÙÇ×½ÄÀÇ ÃÖ°í Â÷¼ö
-		float coef[MAX_DEGREE] = { 0 }; // °¢ Ç×ÀÇ °è¼ö
+		int degree;  // ë‹¤í•­ì‹ì˜ ìµœê³  ì°¨ìˆ˜
+		float coef[MAX_DEGREE] = { 0 }; // ê° í•­ì˜ ê³„ìˆ˜
 
 
 	public:
 		Polynomial()
 		{
-			degree = 0; //»ı¼ºÀÚ
+			degree = 0; //ìƒì„±ì
 		}
 
-		void read()  //´ÙÇ×½ÄÀÇ ³»¿ë ÀÔ·Â
+		void read()  //ë‹¤í•­ì‹ì˜ ë‚´ìš© ì…ë ¥
 		{
-			printf("´ÙÇ×½ÄÀÇ ÃÖ°í Â÷¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+			printf("ë‹¤í•­ì‹ì˜ ìµœê³  ì°¨ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 			scanf_s("%d", &degree);
-			printf("°¢ Ç×ÀÇ °è¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À (ÃÑ %d°³): ", degree + 1);
+			printf("ê° í•­ì˜ ê³„ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤ (ì´ %dê°œ): ", degree + 1);
 			for (int i = 0; i <= degree; i++)
 				scanf_s("%f", coef + i);
 		}
 
-		void display(const char* str = " Poly = ") {  //´ÙÇ×½Ä ³»¿ëÃâ·Â¿ë
+		void display(const char* str = " Poly = ") {  //ë‹¤í•­ì‹ ë‚´ìš©ì¶œë ¥ìš©
 			printf("\t%s", str);
 			for (int i = 0; i < degree; i++)
 				printf("%5.1f x^%d + ", coef[i], degree - i);
@@ -36,7 +36,7 @@ int main()
 		}
 
 
-		void add(Polynomial a, Polynomial b) {  //µ¡¼À
+		void add(Polynomial a, Polynomial b) {  //ë§ì…ˆ
 			if (a.degree > b.degree) {
 				*this = a;
 				for (int i = 0; i <= b.degree; i++)
@@ -50,7 +50,7 @@ int main()
 			}
 		}
 
-		void sub(Polynomial a, Polynomial b)  //»¬¼À
+		void sub(Polynomial a, Polynomial b)  //ëº„ì…ˆ
 		{
 			if (a.degree > b.degree) {
 				*this = a;
@@ -66,18 +66,18 @@ int main()
 			}
 		}
 
-		void mult(Polynomial a, Polynomial b) //°ö¼À
+		void mult(Polynomial a, Polynomial b) //ê³±ì…ˆ
 		{
 			degree = a.degree + b.degree;
 			for (int i = 0; i <= degree; i++)
 				coef[i] = 0;
 			for (int i = 0; i <= a.degree; i++)
-				for (int j = 0; j < b.degree; j++)
+				for (int j = 0; j <= b.degree; j++)
 					coef[i + j] += a.coef[i] * b.coef[j];
 		}
 
-		bool isZero() { return degree == 0; } //ÃÖ°íÂ÷¼ö 0ÀÎÁö
-		void negate() {  //¸ğµç °è¼öÀÇ ºÎÈ£ ¹Ù²Ù±â
+		bool isZero() { return degree == 0; } //ìµœê³ ì°¨ìˆ˜ 0ì¸ì§€
+		void negate() {  //ëª¨ë“  ê³„ìˆ˜ì˜ ë¶€í˜¸ ë°”ê¾¸ê¸°
 			for (int i = 0; i <= degree; i++)
 				coef[i] = -coef[i];
 		}
