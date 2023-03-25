@@ -26,20 +26,20 @@ public:
 	bool isFull() { return top == MAX_STACK_SIZE - 1; }
 
 	void push(double e) {
-		if (isFull()) error("½ºÅÃ Æ÷È­ ¿¡·¯");
+		if (isFull()) error("ìŠ¤íƒ í¬í™” ì—ëŸ¬");
 		counts += 1;
 		data[++top] = e;
 
 	}
 
 	double pop() {
-		if (isEmpty()) error("½ºÅÃ °ø¹é ¿¡·¯");
+		if (isEmpty()) error("ìŠ¤íƒ ê³µë°± ì—ëŸ¬");
 		counts -= 1;
 		return data[top--];
 	}
 
 	double peek() {
-		if (isEmpty()) error("½ºÅÃ °ø¹é ¿¡·¯");
+		if (isEmpty()) error("ìŠ¤íƒ ê³µë°± ì—ëŸ¬");
 		return data[top];
 	}
 
@@ -93,7 +93,7 @@ double calcPostfixExpr(FILE* fp = stdin)
 			k += 1;
 		}
 	}
-	return (st.pop());
+	return st.pop();
 }
 
 void max() {
@@ -118,18 +118,18 @@ int main()
 	for (int i = 0; i < MAX_STACK_SIZE; ++i) {
 		a[i] = -1;
 	}
-	cout << "¼ö½Ä ÀÔ·Â(Postfix)= ";
+	cout << "Postfix ì…ë ¥: ";
 	double res = calcPostfixExpr();
 	max();
 	cout << M << endl << max_count << endl;
-	cout << "---------------------" << endl;
+	cout << "-------------" << endl;
 	for (int i = thcount - 1; i >= 0; --i) {
 		cout << t[i] << endl;
 	}
 	if (oper_count < 3) {
 		cout << "empty";
 	}
-	cout << "---------------------" << endl << res;
+	cout << "-------------" << endl << res;
 
 	return 0;
 }
