@@ -43,6 +43,10 @@ public:
 		return data[top];
 	}
 
+	int getSize(){
+		return top + 1;
+	}
+	
 	double threepop()
 	{
 		for (int i = 0; i < top + 1; ++i)
@@ -52,84 +56,58 @@ public:
 
 };
 
-int k = 0;
-int max_count = 0;
 int oper_count = 0;
-int M;
-int a[100];
 int thcount;
 
-double calcPostfixExpr(FILE* fp = stdin)
-{
-	char c;
-	double	val;
-	OperandStack st;
-
-	while ((c = getc(fp)) != '\n') {
-		if (c == '+' || c == '-' || c == '*' || c == '/') {
-			oper_count = oper_count + 1;
-			if (oper_count == 3) {
-				st.threepop();
-				thcount = counts;
-			}
-			double val2 = st.pop();
-			double val1 = st.pop();
-			switch (c) {
-			case '+': st.push(val1 + val2); break;
-			case '-': st.push(val1 - val2); break;
-			case '*': st.push(val1 * val2); break;
-			case '/': st.push(val1 / val2); break;
-			}
-			a[k] = counts;
-			k += 1;
-
-		}
-		else if (c >= '0' && c <= '9') {
-			ungetc(c, fp);
-			fscanf_s(fp, "%lf", &val);
-
-			st.push(val);
-			a[k] = counts;
-			k += 1;
-		}
-	}
-	return st.pop();
-}
-
-void max() {
-	M = a[0];
-	for (int i = 1; i < 100; ++i) {
-		if (a[i] > M) {
-			M = a[i];
-			max_count = 1;
-		}
-		else if (a[i] == M) {
-			max_count = max_count + 1;
-		}
-		if (a[i] == -1) {
-			break;
-		}
-	}
+double calcPostfixExpr(FILE* fp = stdin) {
+    char c;
+    double val;
+    OperandStack st;
+    int maxStackSize = 0;
+    int countMaxStackSize = 0;
+    while ((c = getc(fp)) != '\n') { // 파일에서 expr 한 문자 씩 읽어서
+        if (c == '+' || c == '-' || c == '*' || c == '/') { //연산자이면
+		oper_count = oper_count + 1;
+		if (oper_count == 3) {
+			st.threepop();
+			thcount = counts;}
+            double val2 = st.pop(); //피연산자 2개 pop하여
+            double val1 = st.pop(); //계산
+            switch (c) {
+            case'+': st.push(val1 + val2); break; // 계산결과를
+            case'-': st.push(val1 - val2); break; // 다시 스택에
+            case'*': st.push(val1 * val2); break; // 저장
+            case'/': st.push(val1 / val2); break;
+            }
+            printStackSize(st, maxStackSize, countMaxStackSize);
+        }
+        else if (c >= '0' && c <= '9') { // 피연산자이면 스택에 push
+            ungetc(c, fp); // 읽어 들인 문자 한 개를 반납
+            fscanf_s(fp, "%lf", &val); // 피연산자를 실수로 read
+            st.push(val); // 피연산자를 스택에 push
+            printStackSize(st, maxStackSize, countMaxStackSize);
+        }
+    }
+    cout << "스택의 최대 크기: " << maxStackSize << endl;
+    cout << "스택의 최대 크기가 나타난 횟수: " << countMaxStackSize << endl;
+    return (st.pop());
 }
 
 
 int main()
 {
-	for (int i = 0; i < MAX_STACK_SIZE; ++i) {
-		a[i] = -1;
-	}
-	cout << "Postfix 입력: ";
+	cout << "수식 입력(Postfix): ";
 	double res = calcPostfixExpr();
-	max();
-	cout << M << endl << max_count << endl;
-	cout << "-------------" << endl;
+	cout << "계산 결과 = " <<res;
+	
+	cout<< "세 번째 연산자 직전의 스택의 상태: ";
 	for (int i = thcount - 1; i >= 0; --i) {
 		cout << t[i] << endl;
 	}
 	if (oper_count < 3) {
 		cout << "empty";
 	}
-	cout << "-------------" << endl << res;
+	
 
 	return 0;
 }
