@@ -1,0 +1,2 @@
+﻿  RandomAccessFile.cpp
+C:\YeEunCPROGRAM\advanced c++\05.18\RandomAccessFile.cpp(3,10): fatal  error C1083: 포함 파일을 열 수 없습니다. 'Student.h': No such file or directory
